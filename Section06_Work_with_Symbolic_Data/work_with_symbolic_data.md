@@ -62,6 +62,23 @@ Screenshots:
 - Enable message-triggered actions (like logging, exporting, or alerts).
 
 ---
+## Real-World Application
+In real automotive and embedded validation projects, interpreting symbolic CAN data is essential for:
+**Interpreting Complex Signals:** Instead of manually analyzing raw hexadecimal payloads, symbolic decoding (e.g., RPM, temperature, battery voltage) enables faster analysis and validation.
+**Debugging Field Issues:** During fault diagnosis or field returns, symbolic signal names like EngTemp or BatteryStatus help identify problems quickly without manually decoding raw frames.
+**Validating ECU Outputs:** Symbolic mappings allow verification that ECUs transmit correct physical values (e.g., 90°C engine temperature) as per system specifications.
+**Automating Testing and Alerts:** Symbolic signals are used to configure automated triggers (e.g., log data if RPM > 6000 or 
+temperature > 110°C) in Hardware-in-the-Loop (HIL) setups and End-of-Line (EOL) testing.
+
+## Skills Practiced
+Connecting DBC databases to simulation environments.
+Decoding real-world physical values from raw CAN data using scaling factors and offsets.
+Setting up symbolic views for validation, logging, and automated fault detection.
+Preparing for system validation, network analysis, and automated reporting tasks.
+
+These skills are fundamental in Vehicle Network Validation, ECU Testing, Automotive Diagnostics, and Embedded Systems Quality Assurance roles.
+
+---
 
 Folder: `Section06_Work_with_Symbolic_Data`  
 
