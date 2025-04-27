@@ -18,14 +18,6 @@ Instead of modifying the original message directly, it creates a **new faulty me
   - Copies the remaining message bytes (`Byte 1–7`) and DLC from the original message.
   - Sends the **new faulty message** (`faultyMsg`) onto the CAN bus.
 
-this.byte(0) = this.byte(0) ^ 0xFF; // Fault Injection
-for (i = 0; i < this.dlc; i++) {
-    faultyMsg.byte(i) = this.byte(i);
-}
-faultyMsg.dlc = this.dlc;
-output(faultyMsg);
-```
-
 ---
 
 ## Limitations (View-Only Mode)
