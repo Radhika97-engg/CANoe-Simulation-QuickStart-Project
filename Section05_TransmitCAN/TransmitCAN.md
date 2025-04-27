@@ -76,7 +76,19 @@ Manually transmit CAN messages using a **visual sequence** without a CAN databas
 - Activate auto-replay  to simulate message stream
 
 ---
+## Real-World Application
+In real automotive systems, engineers often manually inject or simulate CAN frames to:
+**Test Module Responses**: Send specific IDs (e.g., Engine RPM, ABS faults) to verify if ECUs react properly.
+**Validate Safety Systems**: Simulate sudden data patterns like vehicle overspeed, ABS triggers, or emergency brake signals.
+**Diagnose Field Issues**: Replicate real-world faults by sending crafted CAN frames during workshops or recalls.
+**Pre-validate ECU Communication**: Before full integration, teams transmit messages manually to ensure that all network nodes accept, reject, or acknowledge them correctly.
 
+The skills practiced here — manual CAN frame configuration, cycle time tuning, and trace analysis — are fundamental in:
+Vehicle Network Validation
+Hardware-in-the-Loop (HIL) Testing
+End-of-Line (EOL) Diagnostics in automotive manufacturing.
+
+---
 ## Folder Contents
 
 | Screenshot | Purpose |
