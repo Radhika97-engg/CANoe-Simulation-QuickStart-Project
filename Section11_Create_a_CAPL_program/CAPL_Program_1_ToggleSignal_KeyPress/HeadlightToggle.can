@@ -1,0 +1,27 @@
+/*@!Encoding:1252*/
+/* 
+  CAPL Program: Toggle HeadlightStatus Signal on Key Press
+  (Note: CAN signal assignment is skipped due to View-Only Mode)
+*/
+
+includes
+{
+  // No includes needed for basic toggle logic
+}
+
+variables
+{
+  int headlightstate = 0; // 0 = OFF, 1 = ON
+}
+
+on key 'h'
+{
+  // Toggle headlight state
+  headlightstate = !headlightstate;
+
+  // Log the new state to the Write Window
+  write("HeadlightStatus toggled to: %d", headlightstate);
+
+  // CAN signal assignment skipped (View-Only Mode restriction)
+  // Comfort::Console::Console_2::Light = headlightstate;
+}

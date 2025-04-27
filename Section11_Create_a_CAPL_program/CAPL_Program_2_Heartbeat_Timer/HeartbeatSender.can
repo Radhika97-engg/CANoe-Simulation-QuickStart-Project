@@ -1,0 +1,28 @@
+/*@!Encoding:1252*/
+// CAPL Program: Periodic Heartbeat Sender Description: Simulates sending a heartbeat message every 1000 ms using a CAPL timer
+// Note: This script demonstrates timer-based periodic task execution (View-Only Mode Compatible).
+
+includes
+{
+  // No includes needed for this basic timer-based heartbeat logic
+}
+
+variables
+{
+  msTimer heartbeatTimer;  // Timer variable for periodic heartbeat
+}
+
+on start
+{
+  // Start the heartbeat timer to trigger after 1000 ms (1 second)
+  setTimer(heartbeatTimer, 1000);
+}
+
+on timer heartbeatTimer
+{
+  // Simulate sending a heartbeat message
+  write("Heartbeat message sent at: %d ms", timeNow());
+
+  // Restart the timer for the next heartbeat
+  setTimer(heartbeatTimer, 1000);
+}

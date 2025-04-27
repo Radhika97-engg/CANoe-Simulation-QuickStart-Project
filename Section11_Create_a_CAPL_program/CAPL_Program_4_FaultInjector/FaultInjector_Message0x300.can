@@ -1,0 +1,33 @@
+/*@!Encoding:1252*/
+//CAPL Program: Fault Injector - Modify a Specific Byte and Re-Transmit
+//Purpose: Simulate a fault injection by flipping bits of byte 0 in a received CAN message (ID 0x301) and re-transmitting the modified message.
+
+includes
+{
+  // No special includes needed for basic logic
+}
+
+variables
+{
+  message 0x301 faultyMsg; // Preparing a new message with ID 0x301
+}
+
+on message 0x301
+{
+  int i;
+
+  // Inject fault: flip all bits of byte 0
+  this.byte(0) = this.byte(0) ^ 0xFF;
+
+  // Copy all bytes into the new faulty message
+  for (i = 0; i < this.dlc; i++)
+  {
+    faultyMsg.byte(i) = this.byte(i);
+  }
+
+  // Copy the Data Length Code (DLC)
+  faultyMsg.dlc = this.dlc;
+
+  // Transmit the faulty message
+  output(faultyMsg);
+}
