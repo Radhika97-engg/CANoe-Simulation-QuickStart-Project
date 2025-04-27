@@ -18,16 +18,6 @@ This simulates real-world threshold monitoring used in automotive ECU validation
 - Checks if the **Vehicle Speed > 120 km/h**.
 - Logs a **high-speed warning** message when the threshold is crossed.
 
-on message 0x400
-{
-    vehicleSpeed = this.byte(0);
-    if (vehicleSpeed > 120)
-    {
-        write("Vehicle Speed High Warning! Speed = %d km/h", vehicleSpeed);
-    }
-}
-```
-
 ---
 
 ## Limitations (View-Only Mode)
